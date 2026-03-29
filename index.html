@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scott Bighorse — Osage Nation Principal Chief</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky-blue: #5B9BD5;
+      --sky-blue-deep: #3A7CC0;
+      --golden: #D4A843;
+      --golden-light: #E8C76A;
+      --golden-dark: #B08A2E;
+      --sacred-red: #B22234;
+      --sacred-red-dark: #8B1A28;
+      --earth-black: #1A1A1A;
+      --cream: #FAF5EB;
+      --warm-white: #FDF9F3;
+      --text-dark: #2C2418;
+      --text-medium: #5A4E3E;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text-dark);
+      background: var(--warm-white);
+      overflow-x: hidden;
+    }
+
+    .osage-border-top {
+      height: 12px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--sacred-red) 0px, var(--sacred-red) 24px,
+        var(--golden) 24px, var(--golden) 36px,
+        var(--sky-blue) 36px, var(--sky-blue) 60px,
+        var(--golden) 60px, var(--golden) 72px
+      );
+    }
+
+    .osage-divider {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .osage-divider::before,
+    .osage-divider::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--golden), transparent);
+    }
+
+    .osage-diamond {
+      width: 14px;
+      height: 14px;
+      background: var(--sacred-red);
+      transform: rotate(45deg);
+      margin: 0 16px;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--earth-black) 0%, #2A2520 30%, #3A3028 60%, var(--earth-black) 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(91,155,213,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(212,168,67,0.06) 0%, transparent 50%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 58px, var(--golden) 58px, var(--golden) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 58px, var(--golden) 58px, var(--golden) 60px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+      animation: fadeUp 1.2s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 4px solid var(--golden);
+      margin: 0 auto 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 8px rgba(212,168,67,0.15), 0 0 40px rgba(212,168,67,0.1);
+      background: #2A2520;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-name {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: #FFFFFF;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      font-size: clamp(0.85rem, 2vw, 1.15rem);
+      color: var(--golden);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--earth-black);
+      background: linear-gradient(135deg, var(--golden-light), var(--golden));
+      padding: 1rem 2.5rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(212,168,67,0.3);
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, var(--golden), var(--golden-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(212,168,67,0.4);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 30px;
+      background: rgba(255,255,255,0.2);
+      margin: 8px auto 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--earth-black);
+      border-bottom: 2px solid var(--golden);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+      transition: all 0.3s;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+    }
+
+    nav a:hover {
+      color: var(--golden);
+      border-bottom-color: var(--golden);
+    }
+
+    nav .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    nav .nav-social svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 1.5rem; }
+
+    .section-inner { max-width: 900px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sacred-red);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-text {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-medium);
+      max-width: 680px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 700px) {
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+    }
+
+    .about-card {
+      padding: 2rem;
+      background: var(--warm-white);
+      border-left: 3px solid var(--golden);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .about-card h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .about-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-medium);
+    }
+
+    /* ── VALUES ── */
+    #values {
+      background: linear-gradient(135deg, var(--sacred-red), var(--sacred-red-dark));
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #values::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 42px);
+    }
+
+    #values .section-label { color: var(--golden-light); }
+    #values .section-heading { color: #fff; }
+    #values .section-text { color: rgba(255,255,255,0.85); }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s;
+    }
+
+    .value-item:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--golden);
+      transform: translateY(-4px);
+    }
+
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+    .value-item h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      color: var(--golden-light);
+    }
+
+    .value-item p { font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.8); }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--warm-white); }
+
+    .timeline { margin-top: 2.5rem; position: relative; padding-left: 2rem; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--golden), var(--sacred-red), var(--sky-blue));
+    }
+
+    .timeline-group { margin-bottom: 2.5rem; }
+
+    .timeline-group h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sacred-red);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .timeline-group h3::before {
+      content: '';
+      position: absolute;
+      left: -2rem; top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 10px; height: 10px;
+      background: var(--golden);
+      border: 2px solid var(--warm-white);
+    }
+
+    .timeline-item { padding: 0.5rem 0; font-size: 0.95rem; color: var(--text-medium); line-height: 1.6; }
+    .timeline-item strong { color: var(--text-dark); font-weight: 600; }
+    .timeline-item .years { font-size: 0.8rem; color: var(--sky-blue-deep); font-weight: 600; margin-left: 0.25rem; }
+
+    /* ── ENDORSEMENTS ── */
+    #endorsements { background: var(--cream); }
+
+    .endorsements-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .endorsements-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .endorsement-card {
+      background: var(--warm-white);
+      padding: 2rem 2rem 2rem 2.5rem;
+      border-top: 3px solid var(--sacred-red);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      position: relative;
+    }
+
+    .endorsement-card::before {
+      content: '\201C';
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      color: var(--golden);
+      opacity: 0.25;
+      position: absolute;
+      top: 0.25rem; left: 0.75rem;
+      line-height: 1;
+    }
+
+    .endorsement-card blockquote {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-medium);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .endorsement-author { display: flex; align-items: center; gap: 0.75rem; }
+
+    .endorsement-author-dot {
+      width: 8px; height: 8px;
+      background: var(--golden);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .endorsement-author-info strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    .endorsement-author-info span { font-size: 0.8rem; color: var(--text-medium); }
+
+    /* ── NEWS ── */
+    #news { background: var(--warm-white); }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .news-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .news-card {
+      background: var(--cream);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .news-card-color { height: 6px; }
+    .news-card:nth-child(1) .news-card-color { background: var(--sacred-red); }
+    .news-card:nth-child(2) .news-card-color { background: var(--golden); }
+    .news-card:nth-child(3) .news-card-color { background: var(--sky-blue); }
+
+    .news-card-body { padding: 1.75rem; }
+
+    .news-date {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--sky-blue-deep);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .news-card-body h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-dark);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .news-card-body p { font-size: 0.9rem; line-height: 1.65; color: var(--text-medium); margin-bottom: 1rem; }
+
+    .news-link {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sacred-red);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .news-link:hover { color: var(--golden-dark); }
+
+    /* ── VISION ── */
+    #vision {
+      background: linear-gradient(135deg, var(--sky-blue-deep), var(--sky-blue));
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #vision::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 80%, rgba(212,168,67,0.12) 0%, transparent 60%);
+    }
+
+    #vision .section-label { color: var(--golden-light); }
+    #vision .section-heading { color: #fff; }
+
+    .vision-quote {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      line-height: 1.5;
+      color: #fff;
+      max-width: 700px;
+      position: relative;
+      z-index: 1;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--golden);
+    }
+
+    .vision-quote em { color: var(--golden-light); font-style: normal; }
+
+    /* ── CONNECT ── */
+    #connect {
+      background: var(--earth-black);
+      color: #fff;
+      text-align: center;
+    }
+
+    #connect .section-label { color: var(--golden-light); }
+    #connect .section-heading { color: #fff; }
+
+    .connect-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .social-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #1877F2;
+      padding: 1rem 2.5rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(24,119,242,0.3);
+    }
+
+    .social-button:hover {
+      background: #1565D8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(24,119,242,0.4);
+    }
+
+    .social-button svg { width: 20px; height: 20px; fill: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--earth-black);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer .footer-name {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--golden);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p { font-size: 0.8rem; line-height: 1.6; }
+
+    .footer-links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--golden); }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 1.25rem; }
+      nav a { padding: 0.75rem 0.6rem; font-size: 0.6rem; }
+      .hero-photo { width: 160px; height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="osage-border-top"></div>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+
+    <div class="hero-photo">
+      <img src="scott-bighorse.jpg" alt="Scott Bighorse, candidate for Osage Nation Principal Chief">
+    </div>
+
+    <h1 class="hero-name">Scott<br>Bighorse</h1>
+    <p class="hero-title">Osage Nation Principal Chief</p>
+    <p class="hero-tagline">
+      Rooted in tradition. Proven in leadership.<br>
+      Building a future where all Osages can thrive.
+    </p>
+    <a href="#values" class="cta-button">Learn More</a>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ════════ NAV ════════ -->
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#values">Values</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#endorsements">Endorsements</a></li>
+    <li><a href="#news">News</a></li>
+    <li>
+      <!-- ✅ REPLACE href WITH YOUR FACEBOOK PAGE URL -->
+      <a href="https://www.facebook.com/share/1CWfTiTC3w/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ════════ ABOUT ════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label reveal">Meet the Candidate</div>
+    <h2 class="section-heading reveal">A Lifelong Public Servant &amp; Cultural Advocate</h2>
+    <p class="section-text reveal">
+      Scott N. Bighorse is a proud member of the Osage Nation with decades of experience in
+      tribal and state government. Born and raised in Pawhuska, Oklahoma, he is a member of the
+      BigHorse and Pearson families and belongs to the Wa-Xa-Ko-Li'n District.
+    </p>
+
+    <div class="osage-divider" style="margin: 2.5rem auto;">
+      <div class="osage-diamond"></div>
+    </div>
+
+    <p class="section-text reveal" style="margin-top: 0;">
+      His leadership is grounded in Osage Values — respect, accountability, and service —
+      and shaped by a deep commitment to preserving the Nation's sovereignty and building
+      a future where all Osages can thrive.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <h3>Collaborative Leadership</h3>
+        <p>Scott leads with an open door and an open mind. He believes leadership is not about power — it's about service. His approach is collaborative, respectful, and rooted in the belief that every Osage citizen and employee deserves to be heard, valued, and empowered.</p>
+      </div>
+      <div class="about-card reveal">
+        <h3>Osage Heritage</h3>
+        <p>As a member of the BigHorse and Pearson families, Scott carries forward generations of Osage tradition. His leadership honors the past while preparing for the future, ensuring cultural preservation remains at the heart of governance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ VALUES ════════ -->
+<section id="values">
+  <div class="section-inner">
+    <div class="section-label reveal">What He Stands For</div>
+    <h2 class="section-heading reveal">Rooted in Tradition. Proven in Leadership.</h2>
+    <p class="section-text reveal">
+      Scott is committed to transparent governance, cultural preservation, inclusive decision-making,
+      and strategic growth that strengthens Osage sovereignty.
+    </p>
+
+    <div class="values-grid">
+      <div class="value-item reveal">
+        <span class="value-icon">⬡</span>
+        <h3>Trust &amp; Transparency</h3>
+        <p>Transparent governance that earns and protects the trust of the people.</p>
+      </div>
+      <div class="value-item reveal">
+        <span class="value-icon">⊕</span>
+        <h3>Cultural Preservation</h3>
+        <p>Honoring our past while preparing for our future.</p>
+      </div>
+      <div class="value-item reveal">
+        <span class="value-icon">◈</span>
+        <h3>Inclusive Leadership</h3>
+        <p>Inclusive decision-making that welcomes diverse perspectives.</p>
+      </div>
+      <div class="value-item reveal">
+        <span class="value-icon">△</span>
+        <h3>Sovereign Growth</h3>
+        <p>Strategic growth that strengthens sovereignty and economic independence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EXPERIENCE ════════ -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label reveal">Experience That Matters</div>
+    <h2 class="section-heading reveal">Decades of Service to the Osage People</h2>
+
+    <div class="timeline">
+      <div class="timeline-group reveal">
+        <h3>Osage Nation Leadership</h3>
+        <div class="timeline-item"><strong>Interim Principal Chief</strong> <span class="years">(2014)</span></div>
+        <div class="timeline-item"><strong>Assistant Principal Chief</strong> <span class="years">(2010 – 2014)</span></div>
+        <div class="timeline-item"><strong>Congressman, Osage Nation Congress</strong> <span class="years">(2018 – Present)</span></div>
+      </div>
+
+      <div class="timeline-group reveal">
+        <h3>State Leadership</h3>
+        <div class="timeline-item"><strong>State Representative, Oklahoma House District 36</strong> <span class="years">(2006 – 2008)</span></div>
+      </div>
+
+      <div class="timeline-group reveal">
+        <h3>Community Leadership</h3>
+        <div class="timeline-item"><strong>Chairman</strong>, Edwin Fair Mental Health Service Board</div>
+        <div class="timeline-item"><strong>Board Member</strong>, Osage County Youth Services</div>
+        <div class="timeline-item"><strong>Board Member</strong>, Osage County Historic Museum</div>
+        <div class="timeline-item"><strong>Pawhuska Planning &amp; Zoning Board Member</strong></div>
+      </div>
+
+      <div class="timeline-group reveal">
+        <h3>Service</h3>
+        <div class="timeline-item"><strong>Correctional Officer</strong>, Oklahoma Department of Corrections</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ENDORSEMENTS ════════ -->
+<section id="endorsements">
+  <div class="section-inner">
+    <div class="section-label reveal">Voices of Support</div>
+    <h2 class="section-heading reveal">Endorsements</h2>
+    <p class="section-text reveal">
+      Community leaders and Osage citizens speak to Scott's character, commitment, and vision for the Nation.
+    </p>
+
+    <div class="endorsements-grid">
+      <!-- ✅ EDIT: Replace placeholder quotes and names with real endorsements -->
+      <div class="endorsement-card reveal">
+        <blockquote>"Scott has always put the Osage people first. His dedication to transparency and cultural preservation makes him the leader we need for the challenges ahead."</blockquote>
+        <div class="endorsement-author">
+          <div class="endorsement-author-dot"></div>
+          <div class="endorsement-author-info">
+            <strong>Endorser Name</strong>
+            <span>Title / Community Role</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="endorsement-card reveal">
+        <blockquote>"I've watched Scott serve our Nation with integrity for decades. He leads by listening, and that's exactly the kind of leadership our people deserve."</blockquote>
+        <div class="endorsement-author">
+          <div class="endorsement-author-dot"></div>
+          <div class="endorsement-author-info">
+            <strong>Endorser Name</strong>
+            <span>Title / Community Role</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="endorsement-card reveal">
+        <blockquote>"Scott's experience in both tribal and state government gives him a unique perspective. He understands how to protect our sovereignty while building for the future."</blockquote>
+        <div class="endorsement-author">
+          <div class="endorsement-author-dot"></div>
+          <div class="endorsement-author-info">
+            <strong>Endorser Name</strong>
+            <span>Title / Community Role</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="endorsement-card reveal">
+        <blockquote>"Scott is a man of his word. He shows up, he listens, and he follows through. That's what real leadership looks like."</blockquote>
+        <div class="endorsement-author">
+          <div class="endorsement-author-dot"></div>
+          <div class="endorsement-author-info">
+            <strong>Endorser Name</strong>
+            <span>Title / Community Role</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ NEWS ════════ -->
+<section id="news">
+  <div class="section-inner">
+    <div class="section-label reveal">Stay Informed</div>
+    <h2 class="section-heading reveal">News &amp; Updates</h2>
+    <p class="section-text reveal">The latest from the campaign trail and around the Osage Nation.</p>
+
+    <div class="news-grid">
+      <!-- ✅ EDIT: Replace with real news items and links -->
+      <div class="news-card reveal">
+        <div class="news-card-color"></div>
+        <div class="news-card-body">
+          <div class="news-date">March 2026</div>
+          <h3>Scott Bighorse Announces Campaign for Principal Chief</h3>
+          <p>With decades of service and a deep commitment to Osage values, Scott formally announces his candidacy for Principal Chief.</p>
+          <a href="#" class="news-link">Read More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="news-card reveal">
+        <div class="news-card-color"></div>
+        <div class="news-card-body">
+          <div class="news-date">March 2026</div>
+          <h3>Community Town Hall: Pawhuska</h3>
+          <p>Scott hosts an open town hall to hear directly from Osage citizens about the issues that matter most to their families and communities.</p>
+          <a href="#" class="news-link">Read More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="news-card reveal">
+        <div class="news-card-color"></div>
+        <div class="news-card-body">
+          <div class="news-date">Coming Soon</div>
+          <h3>Platform Details &amp; Policy Priorities</h3>
+          <p>A comprehensive look at Scott's policy priorities for sovereignty, cultural preservation, economic growth, and transparent governance.</p>
+          <a href="#" class="news-link">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ VISION ════════ -->
+<section id="vision">
+  <div class="section-inner">
+    <div class="section-label reveal">A Vision for the Future</div>
+    <h2 class="section-heading reveal">All Osages Can Thrive</h2>
+
+    <div class="osage-divider" style="margin: 2rem auto 2.5rem;">
+      <div class="osage-diamond" style="background: var(--golden);"></div>
+    </div>
+
+    <blockquote class="vision-quote reveal">
+      "With a steady hand, a humble heart, and a clear vision —
+      Scott Bighorse is committed to preserving the Nation's sovereignty
+      and building a future where <em>all Osages can thrive</em>."
+    </blockquote>
+
+    <div style="margin-top: 3rem; position: relative; z-index: 1;" class="reveal">
+      <a href="#home" class="cta-button" style="background: #fff; color: var(--sky-blue-deep);">Back to Top</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONNECT ════════ -->
+<section id="connect">
+  <div class="section-inner">
+    <div class="section-label reveal">Get Involved</div>
+    <h2 class="section-heading reveal">Connect with Scott</h2>
+    <p class="connect-text reveal">
+      Follow the campaign on Facebook for the latest updates, events, and ways to support
+      Scott Bighorse for Principal Chief.
+    </p>
+
+    <!-- ✅ REPLACE href WITH YOUR FACEBOOK PAGE URL -->
+    <a href="https://www.facebook.com/share/1CWfTiTC3w/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-button reveal">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Follow on Facebook
+    </a>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-name">Scott Bighorse for Principal Chief</div>
+  <p>Paid for by the Committee to Elect Scott Bighorse</p>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#values">Values</a>
+    <a href="#experience">Experience</a>
+    <a href="#endorsements">Endorsements</a>
+    <a href="#news">News</a>
+    <a href="#connect">Connect</a>
+  </div>
+  <p style="margin-top: 1.5rem; font-size: 0.7rem; opacity: 0.4;">&copy; 2026 Scott Bighorse Campaign. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
