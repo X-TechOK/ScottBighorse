@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scott Bighorse — Osage Nation Principal Chief</title>
+  <meta name="description" content="Scott Bighorse for Osage Nation Principal Chief — Rooted in tradition. Proven in leadership.">
+  <link rel="canonical" href="https://www.scottbighorse.com/">
+  <meta property="og:url" content="https://www.scottbighorse.com/">
+  <meta property="og:title" content="Scott Bighorse — Osage Nation Principal Chief">
+  <meta property="og:description" content="Rooted in tradition. Proven in leadership. Building a future where all Osages can thrive.">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -479,8 +484,130 @@
 
     .endorsement-author-info span { font-size: 0.8rem; color: var(--text-medium); }
 
+    /* ── EVENTS ── */
+    #events { background: var(--warm-white); }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .events-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .event-card {
+      background: var(--cream);
+      border-bottom: 3px solid var(--golden);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    }
+
+    .event-card-header {
+      background: linear-gradient(135deg, var(--earth-black), #2A2520);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .event-date-badge {
+      text-align: center;
+      background: var(--golden);
+      color: var(--earth-black);
+      padding: 0.6rem 0.9rem;
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+
+    .event-date-badge .month {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .event-date-badge .day {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .event-card-header-info h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+
+    .event-card-header-info .event-time {
+      font-size: 0.8rem;
+      color: var(--golden-light);
+      letter-spacing: 0.08em;
+    }
+
+    .event-card-body {
+      padding: 1.75rem 2rem;
+      flex: 1;
+    }
+
+    .event-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .event-meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.4;
+    }
+
+    .event-meta-item .meta-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: var(--sacred-red);
+    }
+
+    .event-description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-medium);
+    }
+
+    .event-hosted-by {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      font-size: 0.8rem;
+      color: var(--text-medium);
+      font-style: italic;
+    }
+
     /* ── NEWS ── */
-    #news { background: var(--warm-white); }
+    #news { background: var(--cream); }
 
     .news-grid {
       display: grid;
@@ -494,7 +621,7 @@
     }
 
     .news-card {
-      background: var(--cream);
+      background: var(--warm-white);
       overflow: hidden;
       box-shadow: 0 2px 12px rgba(0,0,0,0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -708,9 +835,9 @@
     <li><a href="#values">Values</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#endorsements">Endorsements</a></li>
+    <li><a href="#events">Events</a></li>
     <li><a href="#news">News</a></li>
     <li>
-      <!-- ✅ REPLACE href WITH YOUR FACEBOOK PAGE URL -->
       <a href="https://www.facebook.com/share/1CWfTiTC3w/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social">
         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Facebook
@@ -833,7 +960,6 @@
     </p>
 
     <div class="endorsements-grid">
-      <!-- ✅ EDIT: Replace placeholder quotes and names with real endorsements -->
       <div class="endorsement-card reveal">
         <blockquote>"Scott has always put the Osage people first. His dedication to transparency and cultural preservation makes him the leader we need for the challenges ahead."</blockquote>
         <div class="endorsement-author">
@@ -881,6 +1007,73 @@
   </div>
 </section>
 
+<!-- ════════ EVENTS ════════ -->
+<section id="events">
+  <div class="section-inner">
+    <div class="section-label reveal">On the Campaign Trail</div>
+    <h2 class="section-heading reveal">Upcoming Events</h2>
+    <p class="section-text reveal">
+      Come meet Scott in person. Hear his vision, ask questions, and meet the people behind the campaign.
+    </p>
+
+    <div class="events-grid">
+
+      <!-- EVENT: BBQ at Taylor Ranch -->
+      <div class="event-card reveal">
+        <div class="event-card-header">
+          <div class="event-date-badge">
+            <span class="month">Apr</span>
+            <span class="day">30</span>
+          </div>
+          <div class="event-card-header-info">
+            <h3>An Evening of BBQ &amp; Conversation with Scott</h3>
+            <div class="event-time">Thursday &nbsp;·&nbsp; 5:00 PM – 8:00 PM &nbsp;·&nbsp; Come &amp; Go</div>
+          </div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-meta">
+            <div class="event-meta-item">
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Taylor Ranch &nbsp;·&nbsp; 22005 OK-99, Pawhuska, OK 74056</span>
+            </div>
+          </div>
+          <p class="event-description">
+            Hear Scott's vision for the future of the Osage Nation and meet members of his select transition team. This is a casual, open-door event — come when you can, stay as long as you like.
+          </p>
+          <div class="event-hosted-by">
+            Hosted by Taylor Ranch and friends of Scott Bighorse for Principal Chief
+          </div>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER for next event -->
+      <div class="event-card reveal" style="border-style: dashed; border-color: rgba(0,0,0,0.12); background: transparent; box-shadow: none;">
+        <div class="event-card-header" style="background: rgba(0,0,0,0.04);">
+          <div class="event-date-badge" style="background: var(--text-medium); color: #fff;">
+            <span class="month">TBD</span>
+            <span class="day" style="font-size:1.3rem;">Soon</span>
+          </div>
+          <div class="event-card-header-info">
+            <h3 style="color: var(--text-medium);">More Events Coming Soon</h3>
+            <div class="event-time" style="color: var(--text-medium);">Follow on Facebook for announcements</div>
+          </div>
+        </div>
+        <div class="event-card-body">
+          <p class="event-description" style="font-style: italic;">
+            Additional town halls, meet-and-greets, and community events will be announced on Facebook. Follow the campaign page to stay up to date.
+          </p>
+          <div style="margin-top: 1.25rem;">
+            <a href="https://www.facebook.com/share/1CWfTiTC3w/?mibextid=wwXIfr" target="_blank" rel="noopener" style="font-family:'Cinzel',serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sacred-red);text-decoration:none;">Follow on Facebook &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ════════ NEWS ════════ -->
 <section id="news">
   <div class="section-inner">
@@ -889,7 +1082,6 @@
     <p class="section-text reveal">The latest from the campaign trail and around the Osage Nation.</p>
 
     <div class="news-grid">
-      <!-- ✅ EDIT: Replace with real news items and links -->
       <div class="news-card reveal">
         <div class="news-card-color"></div>
         <div class="news-card-body">
@@ -955,7 +1147,6 @@
       Scott Bighorse for Principal Chief.
     </p>
 
-    <!-- ✅ REPLACE href WITH YOUR FACEBOOK PAGE URL -->
     <a href="https://www.facebook.com/share/1CWfTiTC3w/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-button reveal">
       <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Follow on Facebook
@@ -972,10 +1163,12 @@
     <a href="#values">Values</a>
     <a href="#experience">Experience</a>
     <a href="#endorsements">Endorsements</a>
+    <a href="#events">Events</a>
     <a href="#news">News</a>
     <a href="#connect">Connect</a>
+    <a href="https://www.scottbighorse.com/">ScottBighorse.com</a>
   </div>
-  <p style="margin-top: 1.5rem; font-size: 0.7rem; opacity: 0.4;">&copy; 2026 Scott Bighorse Campaign. All rights reserved.</p>
+  <p style="margin-top: 1.5rem; font-size: 0.7rem; opacity: 0.4;">&copy; 2026 Scott Bighorse Campaign. All rights reserved. &nbsp;·&nbsp; <a href="https://www.scottbighorse.com/" style="color:inherit;text-decoration:none;">ScottBighorse.com</a></p>
 </footer>
 
 <script>
